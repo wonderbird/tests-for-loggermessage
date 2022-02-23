@@ -2,7 +2,7 @@
 
 [![Build Status Badge](https://github.com/wonderbird/tests-for-loggermessage/workflows/.NET/badge.svg)](https://github.com/wonderbird/tests-for-loggermessage/actions?query=workflow%3A%22.NET%22)
 
-Examples on how to unit test [LoggerMessage based High-Performance-Logging](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-6.0).
+An example on how to unit test [LoggerMessage based High-Performance-Logging](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-6.0) using [Github: alefranz / MELT](https://github.com/alefranz/MELT).
 
 ## Thanks
 
@@ -109,3 +109,5 @@ The report will be created as `dupfinder-report.html` in the current directory.
 
 * This project is based on the [wonderbird / dotnet-starter](https://github.com/wonderbird/dotnet-starter) template
 * [High-performance logging with LoggerMessage in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-6.0)
+* Alessio Franceschelli: [How to test logging when using Microsoft.Extensions.Logging](https://alessio.franceschelli.me/posts/dotnet/how-to-test-logging-when-using-microsoft-extensions-logging/)
+  * [Github: alefranz / MELT](https://github.com/alefranz/MELT) - Testing Library for Microsoft Extensions Logging.
