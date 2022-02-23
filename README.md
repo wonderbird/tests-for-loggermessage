@@ -1,78 +1,21 @@
 # Starter Template for new .NET Projects
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wonderbird/dotnet-starter)
-[![Build Status Badge](https://github.com/wonderbird/dotnet-starter/workflows/.NET/badge.svg)](https://github.com/wonderbird/dotnet-starter/actions?query=workflow%3A%22.NET%22)
-[![Test Coverage (coveralls)](https://img.shields.io/coveralls/github/wonderbird/dotnet-starter)](https://coveralls.io/github/wonderbird/dotnet-starter)
-[![Test Coverage (codeclimate)](https://img.shields.io/codeclimate/coverage-letter/wonderbird/dotnet-starter)](https://codeclimate.com/github/wonderbird/dotnet-starter/trends/test_coverage_total)
-[![Code Maintainability](https://img.shields.io/codeclimate/maintainability-percentage/wonderbird/dotnet-starter)](https://codeclimate.com/github/wonderbird/dotnet-starter)
-[![Issues in Code](https://img.shields.io/codeclimate/issues/wonderbird/dotnet-starter)](https://codeclimate.com/github/wonderbird/dotnet-starter/issues)
-[![Technical Debt](https://img.shields.io/codeclimate/tech-debt/wonderbird/dotnet-starter)](https://codeclimate.com/github/wonderbird/dotnet-starter)
-[![CodeScene Code Health](https://codescene.io/projects/13371/status-badges/code-health)](https://codescene.io/projects/13371/jobs/latest-successful/results)
-[![CodeScene System Mastery](https://codescene.io/projects/13371/status-badges/system-mastery)](https://codescene.io/projects/13371/jobs/latest-successful/results)
+[![Build Status Badge](https://github.com/wonderbird/tests-for-loggermessage/workflows/.NET/badge.svg)](https://github.com/wonderbird/tests-for-loggermessage/actions?query=workflow%3A%22.NET%22)
 
-This repository provides a starter template for new C# projects.
+Examples on how to unit test [LoggerMessage based High-Performance-Logging](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-6.0).
 
 ## Thanks
 
-Many thanks to [JetBrains](https://www.jetbrains.com/?from=dotnet-starter) who provide
+Many thanks to [JetBrains](https://www.jetbrains.com/?from=tests-for-loggermessage) who provide
 an [Open Source License](https://www.jetbrains.com/community/opensource/) for this project ❤️.
 
 ## Development
 
-### What is inside?
-
-**Attention:**
-
-The contained `.editorconfig` brings formatting configuration and static code analysis rules. Violating these rules will fail your build.
-You can delete or adapt this file to get more flexible rules.
-
-Additional folders, files and configuration:
-
-- DotnetStarter.Logic - is a DLL project for business logic
-- DotnetStarter.Logic.Tests - is the corresponding xUnit test project, configured with static code rules allowing underscores in test names (GlobalSuppressions.cs)
-- .github\dependabot.yml - configuration for the GitHub Dependabot.
-- .github\workflows\dotnet.yml - automatic builds using GitHub actions.
-
-### Creating a New Project From this Template
-
-After having forked this starter project, you'll need to adapt the project names inside this solution, fix **the links**
-in the badges section above, the textual description in this README.md file and - if using
-[CodeClimate (Quality)](https://codeclimate.com) - add the `CC_TEST_REPORTER_ID` to the github project secrets:
-
-1. Change the LICENSE to your needs
-
-2. Renaming from `DotnetStarter` to ...
-   - rename the `.sln`, the contained projects and the root namespaces to match your new project
-   - adapt the test entry in the `.github/workflow/dotnet.yml` file
-   - adapt the environment variable in `tools/dupfinder.sh` and `tools/dupfinder.bat`, respectively
-   - adapt the test directory in the `.gitpod.yml` file
-
-3. If you have a [coveralls.io](https://coveralls.io) account, add the new project and replace the corresponding `wonderbird/dotnet-starter` entries above by your Github name and the name of this project.
-
-4. If you have a [CodeClimate (Quality)](https://codeclimate.com) account,
-   - add the new project and replace the corresponding `wonderbird/dotnet-starter` entries above by your Github name and the name of this project
-   - get the `CC_TEST_REPORTER_ID` from the [CodeClimate](https://codeclimate.com) test coverage settings and set it as a repository secret in your Github project
-
-5. If you have a [CodeScene](https://codescene.io) account,
-   - add the new project and trigger an analysis
-   - in the [CodeScene](https://codescene.io) status badges configuration, tick the checboxes next to Code Health and System Mastery in order to make the badges visible to the public
-   - in the badges section above, replace the [CodeScene](https://codescene.io) project number `13371` by the number of your project
-
-6. Delete all badges from above, which you don't need
-
-7. Commit and push in order to trigger a build. Then check whether all badges work as expected, i.e. click them and check whether they redirect to the correct projects.
-
-### Quick-Start
-
-Click the [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wonderbird/dotnet-starter) badge (also above) to launch a web IDE.
-
-If that does not work for you or if you'd like to have the project on your local machine, then continue reading.
-
 ### Prerequisites
 
-To compile, test and run this project the latest [.NET Core SDK](https://dotnet.microsoft.com/download) is required on
-your machine. For calculating code metrics I recommend [metrix++](https://github.com/metrixplusplus/metrixplusplus).
-This requires python.
+To compile, test and run this project the latest [.NET SDK](https://dotnet.microsoft.com/download) is required on your
+machine. For calculating code metrics I recommend [metrix++](https://github.com/metrixplusplus/metrixplusplus). This
+requires python.
 
 If you are interested in test coverage, then you'll need the following tools installed:
 
@@ -92,12 +35,12 @@ dotnet build
 dotnet test
 
 # If you like continuous testing then use the dotnet file watcher to trigger your tests
-dotnet watch -p ./RomanNumerals.Logic.Tests test
+dotnet watch -p ./TestsForLoggerMessage.Logic.Tests test
 
 # As an alternative, run the tests with coverage and produce a coverage report
-rm -r RomanNumerals.Logic.Tests/TestResults && \
+rm -r TestsForLoggerMessage.Logic.Tests/TestResults && \
   dotnet test --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput='./TestResults/coverage.cobertura.xml' && \
-  reportgenerator "-reports:RomanNumerals.Logic.Tests/TestResults/*.xml" "-targetdir:report" "-reporttypes:Html;lcov" "-title:RomanNumerals"
+  reportgenerator "-reports:TestsForLoggerMessage.Logic.Tests/TestResults/*.xml" "-targetdir:report" "-reporttypes:Html;lcov" "-title:Tests For LoggerMessage"
 open report/index.html
 ```
 
@@ -164,20 +107,5 @@ The report will be created as `dupfinder-report.html` in the current directory.
 
 # References
 
-## .NET Core
-
-* GitHub: [aspnet / Hosting / samples / GenericHostSample](https://github.com/aspnet/Hosting/tree/2.2.0/samples/GenericHostSample)
-
-## Code Quality
-
-* Continuous Testing
-  * Scott Hanselman: [Command Line: Using dotnet watch test for continuous testing with .NET Core 1.0 and XUnit.net](https://www.hanselman.com/blog/command-line-using-dotnet-watch-test-for-continuous-testing-with-net-core-10-and-xunitnet)
-  * Steve Smith (Ardalis): [Automate Testing and Running Apps with dotnet watch](https://ardalis.com/automate-testing-and-running-apps-with-dotnet-watch/)
-* Microsoft: [Use code coverage for unit testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=linux)
-* GitHub: [coverlet-coverage / coverlet](https://github.com/coverlet-coverage/coverlet)
-* GitHub: [danielpalme / ReportGenerator](https://github.com/danielpalme/ReportGenerator)
-* JetBrains s.r.o.: [dupFinder Command-Line Tool](https://www.jetbrains.com/help/resharper/dupFinder.html)
-* Scott Hanselman: [EditorConfig code formatting from the command line with .NET Core's dotnet format global tool](https://www.hanselman.com/blog/editorconfig-code-formatting-from-the-command-line-with-net-cores-dotnet-format-global-tool)
-* [EditorConfig.org](https://editorconfig.org)
-* GitHub: [dotnet / roslyn - .editorconfig](https://github.com/dotnet/roslyn/blob/master/.editorconfig)
-* Check all the badges on top of this README
+* This project is based on the [wonderbird / dotnet-starter](https://github.com/wonderbird/dotnet-starter) template
+* [High-performance logging with LoggerMessage in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-6.0)
