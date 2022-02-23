@@ -1,6 +1,12 @@
+using Microsoft.Extensions.Logging;
+
 namespace TestsForLoggerMessage.Logic;
 
 public class HelloWorld
 {
-    public static string Hello() => "World!";
+    private readonly ILogger<HelloWorld> _logger;
+
+    public HelloWorld(ILogger<HelloWorld> logger) => _logger = logger;
+
+    public void LogHelloWorld() => _logger.HelloWorld();
 }
